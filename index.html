@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guess the NFT - Home</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+    <script id="main"src=""></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><img src="nftlogo4.png" alt="NFT logo" class="logo"></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="howtoplay.html">How To Play</a></li>
+      <li><a href="faqs.html">FAQ</a></li>
+    </ul>
+
+    <div class="wrap">
+      <div id="div1"class="image1">  
+        <img onclick="endGame()"class="image"id="image1" src="" alt="image" width="300px" height="300px" href="">
+        <p class="p2">SPACEHOLDER</p>
+        <a id="p1" class="p" href="">OpenSea</a>
+        <div id="middle1"class="middle1">
+          <div id="text1" class="text">OpenSea</div>
+        </div>
+      </div>
+    
+      <div id="div2"class="image2">
+        <img onclick="endGame()"class="image"id="image2" src="" alt="image" width="300px" height="300px" href="">
+        <p class="p2">SPACEHOLDER</p>
+        <a id="p2" class="p" href="">OpenSea</a>
+        <div id="middle2"class="middle2">
+          <div id="text2" class="text">OpenSea</div>
+        </div>
+      </div>
+    
+      <div id="div3"class="image3">
+        <img onclick="endGame()"class="image"id="image3" src="" alt="image" width="300px" height="300px">
+        <p class="p2">SPACEHOLDER</p>
+        <a id="p3" class="p" href="">OpenSea</a>
+        <div id="middle3"class="middle3">
+          <div id="text3" class="text">OpenSea</div>
+        </div> 
+      </div>
+
+      <div>
+        <button class="playButton" onclick="load_js()">Play Again</button>
+      </div>
+
+      <p hidden id="answer">answer</p>
+      <p hidden id="link1">link</p>
+      <p hidden id="link2">link</p>
+      <p hidden id="link3">link</p>
+      <p hidden id="name1">link</p>
+      <p hidden id="name2">link</p>
+      <p hidden id="name3">link</p>
+    </div>
+
+    <script>
+      function load_js() {
+        document.getElementById("div1").style["boxShadow"] = "0 0 0px 0px #950101";
+        document.getElementById("div2").style["boxShadow"] = "0 0 0px 0px #950101";
+        document.getElementById("div3").style["boxShadow"] = "0 0 0px 0px #950101";
+        document.getElementById("p1").style["visibility"] = "hidden";
+        document.getElementById("p2").style["visibility"] = "hidden";
+        document.getElementById("p3").style["visibility"] = "hidden";
+        var head= document.getElementsByTagName('head')[0];
+        var script= document.createElement('script');
+        script.src= './main.js';
+        head.appendChild(script);
+      }
+      load_js();
+    </script>
+
+    <script src="./main.js"></script>
+
+    <script>
+      function endGame() {
+        let answer = document.getElementById("answer").innerHTML;
+        console.log(answer);
+        var el = document.getElementById(answer);
+        document.getElementById("div1").style["boxShadow"] = "0 0 10px 10px #950101";
+        document.getElementById("div2").style["boxShadow"] = "0 0 10px 10px #950101";
+        document.getElementById("div3").style["boxShadow"] = "0 0 10px 10px #950101";
+        el.style["boxShadow"] = "0 0 10px 10px #519259";
+        document.getElementById("p1").style["visibility"] = "visible";
+        document.getElementById("p2").style["visibility"] = "visible";
+        document.getElementById("p3").style["visibility"] = "visible";
+        document.getElementById("p1").innerHTML=(document.getElementById("name1").innerHTML);
+        document.getElementById("p2").innerHTML=(document.getElementById("name2").innerHTML);
+        document.getElementById("p3").innerHTML=(document.getElementById("name3").innerHTML);
+        document.getElementById("p1").href=(document.getElementById("link1").innerHTML);
+        document.getElementById("p2").href=(document.getElementById("link2").innerHTML);
+        document.getElementById("p3").href=(document.getElementById("link3").innerHTML);
+        document.getElementById("main").src=("./main.js")
+      }
+    </script>
+
+    <p class="footer">© 2022 Guess The NFT. All Rights Reserved.</p>
+  </body> 
+</html>
